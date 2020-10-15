@@ -1,0 +1,49 @@
+.mburger
+	width: 40px
+	height: 40px
+	--mb-bar-height: 2px
+	position: absolute
+	right: 0
+	top: 40px
+	color: $gold
+	z-index: 0
+
+// MMENU
+.mm-panels>.mm-panel
+	background-color: $dark
+
+.mm-navbar_sticky
+  display: none
+
+.mm-listview
+  padding-top: 70px
+
+.mm-listitems
+  font-size: 18px
+  color: $white
+
+.mm-listitem 
+  a
+    &:hover
+      color: $accent
+    &:focus
+      color: $accent
+      
+
+.mm-menu_theme-dark
+  --mm-color-border: rgba(0, 0, 0, 0.3)
+  --mm-color-button: rgba(255, 255, 255, 0.4)
+  --mm-color-text: rgba(255, 255, 255, 0.85)
+  --mm-color-text-dimmed: rgba(255, 255, 255, 0.4)
+  --mm-color-background: #333
+  --mm-color-background-highlight: rgba(228, 13, 13, 0.08)
+  --mm-color-background-emphasis: $gold
+  --mm-shadow: 0 0 20px rgba(34, 28, 28, 0.5)
+
+.mm-menu_offcanvas
+  width: 80%
+  min-width: 240px
+  max-width: 240px
+
+.mm-wrapper_opening .mm-menu_position-right.mm-menu_opened~.mm-slideout
+  transform: translate3d(-250px,0,0)

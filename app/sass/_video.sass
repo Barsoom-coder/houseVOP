@@ -1,0 +1,33 @@
+.video
+	padding-right: 15px
+	padding-left: 15px
+	padding-bottom: 180px
+	&__block
+		margin: auto
+		position: relative
+		max-width: 719px
+		height: 650px
+		&::after		
+				content: 'IV'
+				display: flex
+				position: absolute
+				right: -409px
+				top: 28px
+				font-family: $PlayFairDisplay
+				font-weight: bold
+				font-size: 400px
+				line-height: 533px
+				color: $white
+				opacity: 0.02
+	&__item
+		position: relative
+		object-fit: cover
+	&__item-button
+		position: absolute
+		left: 50%
+		top: 50%
+		transform: translate(-50%, -50%)
+		cursor: pointer
+
+
+

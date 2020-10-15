@@ -1,0 +1,77 @@
+// USER VARIABLES SECTION
+
+$accent: #D4C17F// Accent Color
+$fontsize: 16px // Body Font Size
+$textcolor: #fff // Text Color
+$system: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
+$roboto: Roboto, sans-serif // Roboto Font Family
+$raleway: Raleway, sans-serif
+$PlayFairDisplay: Play Fair Display, sans-serif
+
+// Colors
+$gold: #D4C17F
+$dark: #242B33
+$white: #fff
+$gray: #BEBEBE
+
+// Bootstrap compatible gutter variable => $gutter
+$grid-gutter-width: 20px
+$gutter: $grid-gutter-width
+
+// IMPORT SECTION
+
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
+
+// @import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+// @import 'node_modules/bootstrap/scss/utilities/_sizing.scss' // Optional Bootstrap Utilites
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl)
+	@font-face
+		font-family: $fname
+		font-style: $fstyle
+		font-display: swap
+		font-weight: $fweight
+		// font-display: swap // Uncomment to initially display system fonts
+		src: local($fname), url($furl) format('woff2')
+
+
+@include font('Play Fair Display', bold, 700, '/fonts/PlayfairDisplay-Bold.woff2')
+@include font('Raleway', normal, 400, '/fonts/Raleway-Regular.woff2')
+@include font('Raleway', bold, 700, '/fonts/Raleway-Bold.woff2')
+@include font('Roboto', light, 300, '/fonts/Raleway-Regular.woff2')
+
+
+// GENERAL DOCUMENT STYLES
+
+::placeholder
+	// color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+body
+	font-family: $raleway
+	font-size: $fontsize
+	min-width: 320px
+	max-width: 1920px
+	margin: auto
+	position: relative
+	line-height: 1.65
+	overflow-x: hidden
+	color: $textcolor
+	background-color: $dark
+	
+
+
+

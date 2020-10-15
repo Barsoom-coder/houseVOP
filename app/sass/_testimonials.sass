@@ -1,0 +1,38 @@
+.testimonials
+	padding-top: 120px
+	padding-bottom: 120px
+	&__wrap
+		display: flex
+		align-items: center
+		justify-content: space-evenly
+		position: relative
+		&::after		
+				content: 'II'
+				display: flex
+				position: absolute
+				right: -202px
+				top: -191px
+				font-family: $PlayFairDisplay
+				font-weight: bold
+				font-size: 400px
+				line-height: 533px
+				color: $white
+				opacity: 0.02
+		
+	&__block
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		.text-block
+			&__caption
+				margin-top: 53px
+				font-family: $roboto
+				font-weight: 300
+				font-size: 20px
+				line-height: 27px
+				opacity: .8
+				text-align: center
+			&__img
+				max-width: 80px
+	

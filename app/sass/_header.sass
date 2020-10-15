@@ -1,0 +1,65 @@
+.header
+	background: $black url(../images/dest/header/header_bg.jpg) no-repeat center top
+	background-size: cover
+	padding: 0 15px
+	&__logo
+		display: inline-flex
+		flex-direction: column
+	.top-nav
+		padding-top: 35px
+		padding-bottom: 200px
+		&__wrap
+			display: flex
+			align-items: center
+			justify-content: space-between
+		&__menu
+			display: inline-flex
+		&__list
+		&__item
+			font-size: 14px
+			line-height: 16px
+			letter-spacing: 0.05em
+			opacity: .9
+			padding-left: 39px
+			
+
+	&__main-block
+		max-width: 582px
+		margin: auto
+		.header-main
+			&__wrap
+				display: flex
+				flex-direction: column
+				align-items: center
+				padding-bottom: 74px
+			&__title
+				font-family: $PlayFairDisplay
+				font-weight: bold
+				padding-bottom: 80px
+				color: $gold
+				font-size: 48px
+				line-height: 64px
+				text-align: center
+			&__scroll-link
+				margin-bottom: 200px
+				&:hover
+					animation: rubberBand 0.6s ease
+			&__contacts
+				display: flex
+				align-self: flex-start
+				max-width: 582px
+				.contacts-main
+					&__text
+						padding-right: 98px
+						&::before
+							content: url(../images/dest/header/map_icon.svg)
+							padding-right: 14px
+							vertical-align: middle
+					&__phone
+						position: relative
+						&::before
+							content: url(../images/dest/header/phone_icon.svg)
+							padding-right: 14px
+							vertical-align: middle
+
+
