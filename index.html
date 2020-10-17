@@ -20,6 +20,12 @@
 
 <body>
 
+	<div class="preloader">
+		<div class="preloader__item">
+			<img src="images/dest/puff.svg" alt="preloader">
+		</div>
+	</div>
+
 	<div id="my-page">
 		<!-- =============================== SCROLL UP ================================ -->
 		<div><i id="scroller" class="fa fa fa-chevron-circle-up" aria-hidden="true"></i></div>
@@ -31,25 +37,6 @@
 
 			<header class="header">
 
-				<!-- =============================== ADAPTIVE MENU ================================ -->
-
-				<a class="mburger mburger--collapse" href="#my-menu">
-					<b></b>
-					<b></b>
-					<b></b>
-				</a>
-
-				<nav id="my-menu">
-					<ul style="display:none;">
-						<li><a href="#about">О комплексе</a></li>
-						<li><a href="#area">Район</a></li>
-						<li><a href="#appartments">Каталог квартир</a></li>
-						<li><a href="#contacts">Контакты</a></li>
-					</ul>
-				</nav>
-
-				<!-- =============================== END ADAPTIVE MENU ================================ -->
-
 				<div class="top-nav">
 					<div class="container">
 
@@ -59,6 +46,25 @@
 								<img src="images/dest/header/logo_icon.svg" alt="logotype" class="logo__image">
 								<div class="logo__caption">жилой комплекс</div>
 							</div>
+
+							<!-- =============================== ADAPTIVE MENU ================================ -->
+
+							<a class="mburger mburger--collapse" href="#my-menu" style="display:none;">
+								<b></b>
+								<b></b>
+								<b></b>
+							</a>
+
+							<nav id="my-menu">
+								<ul>
+									<li><a href="#about">О комплексе</a></li>
+									<li><a href="#area">Район</a></li>
+									<li><a href="#appartments">Каталог квартир</a></li>
+									<li><a href="#contacts">Контакты</a></li>
+								</ul>
+							</nav>
+
+							<!-- =============================== END ADAPTIVE MENU ================================ -->
 
 							<div class="top-nav__menu" id="menu">
 								<ul class="top-nav__list">
@@ -75,14 +81,14 @@
 					</div>
 				</div>
 
-				<div class="header__main-block header-main  " id="link">
+				<div class="header__main-block header-main  ">
 					<div class="container">
 
 						<div class="header-main__wrap">
 
 							<h1 class="header-main__title" data-aos="zoom-in">Жилой комплекс <br> в историческом центре</h1>
 
-							<a href="#about" class="header-main__scroll-link"><img src="images/dest/header/mouse_icon.svg"
+							<a href="#about" id="link" class="header-main__scroll-link"><img src="images/dest/header/mouse_icon.svg"
 									alt="scroll mouse image"></a>
 
 							<div class="header-main__contacts contacts-main">
@@ -212,12 +218,18 @@
 							</p>
 						</div>
 
-						<form action="#" class="watch__form form-main">
+						<form action="mail.php" method="POST" class="watch__form form-main common-form">
 
-							<input type="text" class="form-main__name input" placeholder="Ваше имя">
-							<input type="tel" class="form-main__tel input" placeholder="Ваш телефон">
-							<div class="form-main__garant">*Мы никому не передаем ваши данные.
-								И не сохраняем ваш номер в базу.</div>
+							<!-- Hidden Required Fields -->
+							<input type="hidden" name="project_name" value="house Vop">
+							<input type="hidden" name="admin_email" value="romankononovdev@yandex.ru">
+							<input type="hidden" name="form_subject" value="Данные верхней формы">
+							<!-- END Hidden Required Fields -->
+
+							<input type="text" name="Name" class="form-main__name input" placeholder="Ваше имя">
+							<input type="tel" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" name="Phone"
+								class="form-main__tel input" placeholder="Ваш телефон">
+							<div class="form-main__garant">*Мы никому не передаем ваши данные.И не сохраняем ваш номер в базу.</div>
 							<input class="form-main__submit submit" type="submit" value="Посмотреть район">
 
 						</form>
@@ -248,8 +260,7 @@
 
 					<div class="maps__block map" id="map_container">
 						<script id="ymap_lazy" data-skip-moving="true" async=""
-							data-src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A1ad4887964fc2e0a6f07c6246ffe638b138f8baacc8983f9a6a0f401a02e833a&amp;max-width=1100px&amp;height=100%&amp;lang=ru_RU&amp;scroll=true">
-						</script>
+							data-src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A1ad4887964fc2e0a6f07c6246ffe638b138f8baacc8983f9a6a0f401a02e833a&amp;max-width=1100px&amp;height=100%&amp;lang=ru_RU&amp;scroll=true"></script>
 					</div>
 
 				</div>
@@ -264,7 +275,13 @@
 
 					<div class="questions__wrap">
 
-						<form action="#" class="questions__form form-main">
+						<form action="mail.php" class="questions__form form-main common-form" method="POST">
+
+							<!-- Hidden Required Fields -->
+							<input type="hidden" name="project_name" value="house Vop">
+							<input type="hidden" name="admin_email" value="romankononovdev@yandex.ru">
+							<input type="hidden" name="form_subject" value="Данные нижней формы">
+							<!-- END Hidden Required Fields -->
 
 							<div class="form-main__item">
 								<div class="form-main__garant">*Мы никому не передаем ваши данные.
@@ -276,7 +293,8 @@
 							</div>
 
 							<div class="form-main__item">
-								<input type="tel" class="form-main__tel input" name="phone" placeholder="Ваш телефон">
+								<input type="tel" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$"
+									class="form-main__tel input" name="phone" placeholder="Ваш телефон">
 							</div>
 
 							<div class="form-main__item">
@@ -338,7 +356,8 @@
 								<div class="footer__department footer__main--mod">Отдел продаж: 10:00 - 20:00</div>
 
 								<div class="footer__email footer__main--mod">E-mail:
-									<a href="email:vip@housevip.ru" class="footer__email-link">vip@housevip.ru</a>
+
+									<a href="mailto:vip@housevip.ru" class="footer__email-link">vip@housevip.ru</a>
 
 								</div>
 
